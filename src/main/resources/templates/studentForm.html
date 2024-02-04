@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/form-stylesheet.css}">
+    <title>Student Registration</title>
+</head>
+<body>
+<div>
+    <form th:action="@{/students/save}" th:object="${student}" method="POST">
+        <input type="hidden" th:field="*{id}">
+        First Name  <input type="text" th:field="*{firstName}" placeholder="FirstName" required>
+        <br><br>
+        Last Name   <input type="text" th:field="*{lastName}" placeholder="LastName" required>
+        <br><br>
+        Email       <input type="text" th:field="*{email}" placeholder="Email" required>
+        <br><br>
+        Age         <input type="number" th:field="*{age}" placeholder="Age" min="18" required>
+        <br><br>
+        <input type="submit" value="Submit">
+        <br><br>
+    </form>
+
+</div>
+
+</body>
+</html>
